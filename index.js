@@ -43,11 +43,11 @@ app.use(function(req, res, next) {
 
 app.post('/fileupload', upload.single('streamfile'),async function (req, res) {
     // let stream = fs.createReadStream(req.file)
-
-    var a = await main(req.file.path)
+    var as = req.body; // request infor text
+    console.log(as);
+    var a = await main(req.file.path) //request infor file
     console.log('req.file', a);
-  // req.file is the `avatar` file 
-  // req.body will hold the text fields, if there were any 
+
   res.end('success');
 })
 
